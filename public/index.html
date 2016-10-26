@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html ng-app="sampleApp">
+  <head>
+    <meta charset="utf-8">
+    <title>nodeFire with Authentication</title>
+    <!-- Angular -->
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.8/angular.min.js"></script>
+
+    <!-- Firebase -->
+    <script src="https://www.gstatic.com/firebasejs/3.3.0/firebase.js"></script>
+
+    <!-- AngularFire -->
+    <script src="https://cdn.firebase.com/libs/angularfire/2.0.2/angularfire.min.js"></script>
+
+    <!-- Firebase Config -->
+    <script src="config.js"></script>
+
+    <!-- Application with Authentication -->
+    <script src="app.js"></script>
+  </head>
+  <body ng-controller="SampleCtrl">
+    <h1>Hi! Log in to get some secret data from the server!</h1>
+    <input type="email" name="email" ng-model="email"/>
+    <input type="password" name="password" ng-model="password"/>
+    <button ng-click="logIn()">Log In</button>
+    <button ng-click="logOut()">Log Out</button>
+    <div>
+      {{secretData}}
+    </div>
+    <div>
+      <input type="email" name="newEmail" ng-model="newEmail"/>
+      <input type="password" name="newPassword" ng-model="newPassword"/>
+      <button ng-click="createNewUser()">Create New User</button>
+    </div>
+  </body>
+</html>
